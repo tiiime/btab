@@ -24,6 +24,7 @@
     "newtab": "tab/tab.html"
   },
   "permissions": [
-    "bookmarks"
+    "bookmarks",
+    "storage"
   ]
 }
