@@ -15,7 +15,7 @@
         >
           <el-input v-model="input" placeholder="请输入内容"></el-input>
           <span slot="footer" class="dialog-footer">
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+            <el-button type="primary" @click="addItem(input)">确 定</el-button>
           </span>
         </el-dialog>
       </el-header>
@@ -46,12 +46,13 @@ export default {
     };
   },
   methods: {
-    handleClose(done) {
-      this.$confirm('确认关闭？')
-        .then(_ => {
-          done();
-        })
-        .catch(_ => {});
+    handleClose() {
+    },
+    addItem(item) {
+      var index = this.$store.state.items.length;
+
+      this.$store.dispatch('addItem', { id: index+1, name: item, url: '' });
+      this.dialogVisible = false;
     },
   },
   beforeRouteEnter(to, from, next) {

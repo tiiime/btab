@@ -5,12 +5,11 @@ export default {
     state.foo = payload;
   },
 
-  [types.REQUEST_ADD](state, payload) {
-    if (Array.isArray(items) && items.length) {
-      items.push(payload)
-      state.items = items
+  [types.REQUEST_ADD](state, item) {
+    if (Array.isArray(state.items) && state.items.length) {
+      state.items.push(item)
     } else {
-      state.items = [payload];
+      state.items = [item];
     }
   },
 };
