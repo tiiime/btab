@@ -5,11 +5,11 @@ export default {
     state.foo = payload;
   },
 
-  [types.REQUEST_ADD](state, item) {
-    if (Array.isArray(state.items) && state.items.length) {
-      state.items.push(item)
+  [types.REQUEST_ADD_MENU](state, menu) {
+    if (Array.isArray(state.menus) && state.menus.length) {
+      state.menus.push(menu)
     } else {
-      state.items = [item];
+      state.menus = [menu];
     }
   },
 };

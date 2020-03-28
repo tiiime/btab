@@ -15,14 +15,14 @@
         >
           <el-input v-model="input" placeholder="请输入内容"></el-input>
           <span slot="footer" class="dialog-footer">
-            <el-button type="primary" @click="addItem(input)">确 定</el-button>
+            <el-button type="primary" @click="addMenu(input)">确 定</el-button>
           </span>
         </el-dialog>
       </el-header>
       <el-container>
         <el-aside>
           <el-menu :router="true" default-active="activeLink" class="el-menu-vertical-demo">
-            <template v-for="item in $store.state.items">
+            <template v-for="item in $store.state.menus">
               <el-menu-item :index="'/item/'+item.id" :key="item.id">
                 <span slot="title">{{item.name}}</span>
               </el-menu-item>
@@ -46,12 +46,11 @@ export default {
     };
   },
   methods: {
-    handleClose() {
-    },
-    addItem(item) {
-      var index = this.$store.state.items.length;
+    handleClose() {},
+    addMenu(menu) {
+      var index = this.$store.state.menus.length;
 
-      this.$store.dispatch('addItem', { id: index+1, name: item, url: '' });
+      this.$store.dispatch('addMenu', { id: index + 1, name: menu, url: '' });
       this.dialogVisible = false;
     },
   },

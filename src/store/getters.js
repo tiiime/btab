@@ -1,2 +1,2 @@
 export const foo = state => state.foo;
-export const items = state => state.items
+export const menus = state => state.menus

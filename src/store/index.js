@@ -10,7 +10,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     foo: 'bar',
-    items: [
+    menus: [
       { "id": 1, "url": "", "name":"name 1"},
       { "id": 2, "url": "", "name":"name 2"},
       { "id": 3, "url": "", "name":"name 3"},
