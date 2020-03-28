@@ -1,5 +1,5 @@
 import PageIndex from './pages/Index';
-import List from './pages/List';
+import Item from './pages/Item';
 
 export default [
   {
@@ -8,6 +8,6 @@ export default [
   },
   {
     path: '/item/:id',
-    component: List,
+    component: Item,
   }
 ];
