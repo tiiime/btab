@@ -1,15 +1,23 @@
 <template>
-  <div>
-    <el-row>
-      <el-button>默认按钮</el-button>
-      <el-button type="primary">主要按钮</el-button>
-      <el-button type="success">成功按钮</el-button>
-      <el-button type="info">信息按钮</el-button>
-      <el-button type="warning">警告按钮</el-button>
-      <el-button type="danger">危险按钮</el-button>
-    </el-row>
-
-    <router-view></router-view>
+  <div class="content">
+    <el-container>
+      <el-aside>
+        <el-menu :router="true" default-active="activeLink" class="el-menu-vertical-demo">
+          <el-menu-item index="/item/1">
+            <span slot="title">导航一</span>
+          </el-menu-item>
+          <el-menu-item index="/item/2">
+            <span slot="title">导航二</span>
+          </el-menu-item>
+          <el-menu-item index="/item/3">
+            <span slot="title">导航三</span>
+          </el-menu-item>x
+        </el-menu>
+      </el-aside>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -18,5 +26,23 @@ export default {
   data() {
     return {};
   },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.activeLink = to.path;
+    });
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.activeLink = to.path;
+    next();
+  },
 };
 </script>
+
+<style>
+.content,
+.el-container {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+</style>
