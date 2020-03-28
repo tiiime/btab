@@ -12,7 +12,9 @@
       </el-dialog>
     </div>
     <template v-for="item in content">
-      <div :key="item.index" class="text item">{{ item.name }}</div>
+      <div :key="item.index" class="text item">
+        <el-link type="success" :href="item.url">{{item.name}}</el-link>
+      </div>
     </template>
   </el-card>
 </template>

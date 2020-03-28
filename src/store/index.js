@@ -16,8 +16,8 @@ export default new Vuex.Store({
       { "id": 3, "name": "name 3" },
     ],
     content: [
-      { "menuId": 1, "name": "hello", "url": "google.com" },
-      { "menuId": 2, "name": "hello", "url": "google.com" }
+      { "menuId": 1, "name": "hello", "url": "https://google.com" },
+      { "menuId": 2, "name": "hello", "url": "https://google.com" }
     ]
   },
   getters,
