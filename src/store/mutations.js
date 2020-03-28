@@ -12,4 +12,12 @@ export default {
       state.menus = [menu];
     }
   },
+  [types.REQUEST_ADD_CONTENT](state, { index, payload }) {
+    if (state.content[index]) {
+      state.content[index][url] = payload.url
+      state.content[index][name] = payload.name
+    } else {
+      state.content.splice(index, 0, payload)
+    }
+  },
 };

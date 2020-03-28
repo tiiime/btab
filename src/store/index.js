@@ -11,10 +11,14 @@ export default new Vuex.Store({
   state: {
     foo: 'bar',
     menus: [
-      { "id": 1, "url": "", "name":"name 1"},
-      { "id": 2, "url": "", "name":"name 2"},
-      { "id": 3, "url": "", "name":"name 3"},
+      { "id": 1, "name": "name 1" },
+      { "id": 2, "name": "name 2" },
+      { "id": 3, "name": "name 3" },
     ],
+    content: [
+      { "menuId": 1, "name": "hello", "url": "google.com" },
+      { "menuId": 2, "name": "hello", "url": "google.com" }
+    ]
   },
   getters,
   mutations,
